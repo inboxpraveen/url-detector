@@ -75,4 +75,7 @@ So, I am choosing [Deta]() as this provides free lifetime service.
     - Open your Terminal
     - Enter the command without quotes - "curl -fsSL https://get.deta.dev/cli.sh | sh"
     - If you get error saying no package curl, then run this command - "sudo apt-get install curl" and then repeat the previous step again.
-  
+
+1.3 Installing deta on Mac
+    - Open your Terminal
+    - Enter the command without quotes - "curl -fsSL https://get.deta.dev/cli.sh | sh"
