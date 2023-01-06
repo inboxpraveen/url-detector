@@ -70,3 +70,9 @@ So, I am choosing [Deta]() as this provides free lifetime service.
 1.1 Installing deta on Windows
     - Open your windows powershell with admin
     - Enter the command without quotes - "iwr https://get.deta.dev/cli.ps1 -useb | iex"
+
+1.2 Installing deta on Linux
+    - Open your Terminal
+    - Enter the command without quotes - "curl -fsSL https://get.deta.dev/cli.sh | sh"
+    - If you get error saying no package curl, then run this command - "sudo apt-get install curl" and then repeat the previous step again.
+  
