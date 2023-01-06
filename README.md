@@ -79,3 +79,8 @@ So, I am choosing [Deta]() as this provides free lifetime service.
 1.3 Installing deta on Mac
     - Open your Terminal
     - Enter the command without quotes - "curl -fsSL https://get.deta.dev/cli.sh | sh"
+
+After this, we need to login to deta using the following command:
+    deta login
+
+this will open up a web browser page where you should login and it will redirect you back to your command/terminal saying you have been logged in successfully.
