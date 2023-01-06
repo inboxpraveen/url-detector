@@ -53,3 +53,12 @@ After removal of useless and less coordinating features, the final features are:
 
 ['having_IPhaving_IP_Address', 'URLURL_Length', 'Shortining_Service','having_At_Symbol', 'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State','Domain_registeration_length', 'Favicon', 'HTTPS_token', 'Request_URL', 'URL_of_Anchor',
 'Links_in_tags', 'SFH', 'Submitting_to_email', 'Abnormal_URL','age_of_domain', 'DNSRecord', 'web_traffic', 'Google_Index','Statistical_report', 'Result']
+
+
+## Hosting
+
+Our next step is to do hosting on a free cloud service.
+
+Since this is a small project which does not require any large memory dependencies, we can use any cloud service out there.
+
+So, I am choosing [Deta]() as this provides free lifetime service.
