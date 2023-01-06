@@ -62,3 +62,11 @@ Our next step is to do hosting on a free cloud service.
 Since this is a small project which does not require any large memory dependencies, we can use any cloud service out there.
 
 So, I am choosing [Deta]() as this provides free lifetime service.
+
+#### Initial Steps
+
+1. our first goal is to make sure you have deta installed on your local system. To do so, just follow any one the following instructions based on your operating system.
+
+1.1 Installing deta on Windows
+    - Open your windows powershell with admin
+    - Enter the command without quotes - "iwr https://get.deta.dev/cli.ps1 -useb | iex"
