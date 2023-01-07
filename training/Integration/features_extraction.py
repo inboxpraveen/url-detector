@@ -321,7 +321,7 @@ def get_hostname_from_url(url):
 # TODO: Put the DNS and domain code into a function.
 
 
-def main(url):
+def parse_url(url):
 
     req = requests.get(url)
     soup = BeautifulSoup(req.text, 'html.parser')
@@ -343,7 +343,7 @@ def main(url):
         domain = whois.whois(hostname)
     except:
         dns = -1
-        
+
     status.append(-1) ## this feature is expected to be for: SSL_Final_State. It 
     
     status.append(-1 if dns == -1 else domain_registration_length(domain))
@@ -384,4 +384,4 @@ def main(url):
 #     if len(sys.argv) != 2:
 #         print("Please use the following format for the command - `python2 features_extraction.py <url-to-be-tested>`")
 #         exit(0)
-#     main(sys.argv[1])
+#     parse_url(sys.argv[1])

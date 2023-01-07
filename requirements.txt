@@ -1,8 +1,7 @@
 flask
 joblib
-pandas
-sklearn
-urllib3
-beautifulsoup4
+googlesearch-python
 whois
-requests
+numpy
+pandas
+scikit-learn

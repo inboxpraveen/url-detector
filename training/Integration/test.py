@@ -1,14 +1,12 @@
 
 import joblib
-from . import features_extraction
-import sys
+from features_extraction import parse_url
 import numpy as np
-import pandas as pd
 
 # from features_extraction import LOCALHOST_PATH #DIRECTORY_NAME
 
 def get_prediction_from_url(test_url):
-    features_test = features_extraction.main(test_url)
+    features_test = parse_url(test_url)
 
     """
     This is based on the training part ...
@@ -42,7 +40,7 @@ def get_prediction_from_url(test_url):
     print("Input Features: ",features_test)
     print("Input Shape: ",features_test.shape)
     
-    clf = joblib.load('../eda_and_training/random_forest_model_compressed.pkl')
+    clf = joblib.load('../saved_model/random_forest_model_compressed.pkl')
 
     pred = clf.predict(features_test)
 
@@ -50,16 +48,18 @@ def get_prediction_from_url(test_url):
 
 
 def main(url = ""):
-    prediction = get_prediction_from_url(url)
-
-    if prediction == 1:
-        # print "The website is safe to browse"
-        print("SAFE")
-    elif prediction == -1:
-        # print "The website has phishing features. DO NOT VISIT!"
-        print("PHISHING")
-    return prediction
-
+    if url:
+        return get_prediction_from_url(url)
+        # prediction = get_prediction_from_url(url)
+        # if prediction == 1:
+        #     # print "The website is safe to browse"
+        #     print("SAFE")
+        # elif prediction == -1:
+        #     # print "The website has phishing features. DO NOT VISIT!"
+        #     print("PHISHING")
+        # return prediction
+    else:
+        return 1
 
 if __name__ == "__main__":
-    main()
+    main("https://google.com")
