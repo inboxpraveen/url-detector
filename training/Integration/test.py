@@ -7,7 +7,6 @@ import pandas as pd
 
 # from features_extraction import LOCALHOST_PATH #DIRECTORY_NAME
 
-
 def get_prediction_from_url(test_url):
     features_test = features_extraction.main(test_url)
 
@@ -50,13 +49,8 @@ def get_prediction_from_url(test_url):
     return int(pred[0])
 
 
-def main():
-    url = sys.argv[1]
-
+def main(url = ""):
     prediction = get_prediction_from_url(url)
-
-    print()
-    print("================== RESULT =================")
 
     if prediction == 1:
         # print "The website is safe to browse"
@@ -64,7 +58,8 @@ def main():
     elif prediction == -1:
         # print "The website has phishing features. DO NOT VISIT!"
         print("PHISHING")
+    return prediction
+
 
 if __name__ == "__main__":
     main()
-

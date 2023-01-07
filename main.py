@@ -1,11 +1,21 @@
-import flask
+from flask import Flask, render_template, request
+from training.Integration.test import main
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
-@app.route('/', methods=["GET"])
+@app.route('/', methods=["GET","POST"])
 def hello_world():
-    # if flask.render.method == "GET":
-    return (flask.render_template("index.html"))
+    if request.method == "GET":
+        return (render_template("index.html"))
+    
+    if request.method == "POST":
+        output = main(request.form["movie_name"])
+        if output == 1:
+            return (render_template("safe.html"))
+        elif output == -1:
+            return (render_template("unsafe.html"))
+        else:
+            return ("<h1>something went wrong</h1>")
 
 if __name__ == "__main__":
     app.run()
