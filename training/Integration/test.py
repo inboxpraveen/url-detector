@@ -1,6 +1,6 @@
 
 import joblib
-import features_extraction
+from . import features_extraction
 import sys
 import numpy as np
 import pandas as pd

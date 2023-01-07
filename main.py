@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from training.Integration.test import main
+# from training.Integration.test import main
 
 app = Flask(__name__)
 
@@ -9,7 +9,8 @@ def hello_world():
         return (render_template("index.html"))
     
     if request.method == "POST":
-        output = main(request.form["movie_name"])
+        output = -1
+        # output = main(request.form["movie_name"])
         if output == 1:
             return (render_template("safe.html"))
         elif output == -1:
