@@ -1,6 +1,5 @@
 flask
 joblib
-numpy
 pandas
 sklearn
 urllib3
