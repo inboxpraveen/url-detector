@@ -3,5 +3,4 @@ joblib
 googlesearch-python
 whois
 numpy
-pandas
 scikit-learn

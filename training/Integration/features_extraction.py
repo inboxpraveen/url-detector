@@ -323,59 +323,62 @@ def get_hostname_from_url(url):
 
 def parse_url(url):
 
-    req = requests.get(url)
-    soup = BeautifulSoup(req.text, 'html.parser')
-    status = []
-    hostname = get_hostname_from_url(url)
-    status.append(having_ip_address(url))
-    status.append(url_length(url))
-    status.append(shortening_service(url))
-    status.append(having_at_symbol(url))
-    status.append(double_slash_redirecting(url))
-    status.append(prefix_suffix(hostname))
-    status.append(having_sub_domain(url))
-    domain = ""
-    dns = 1
     try:
-        # if you are using linux use below command
-        # domain = whois.query(hostname)
-        # if you are using windows use
-        domain = whois.whois(hostname)
+        req = requests.get(url)
+        soup = BeautifulSoup(req.text, 'html.parser')
+        status = []
+        hostname = get_hostname_from_url(url)
+        status.append(having_ip_address(url))
+        status.append(url_length(url))
+        status.append(shortening_service(url))
+        status.append(having_at_symbol(url))
+        status.append(double_slash_redirecting(url))
+        status.append(prefix_suffix(hostname))
+        status.append(having_sub_domain(url))
+        domain = ""
+        dns = 1
+        try:
+            # if you are using linux use below command
+            # domain = whois.query(hostname)
+            # if you are using windows use
+            domain = whois.whois(hostname)
+        except:
+            dns = -1
+
+        status.append(-1) ## this feature is expected to be for: SSL_Final_State. It 
+        
+        status.append(-1 if dns == -1 else domain_registration_length(domain))
+
+        status.append(favicon(url, soup, hostname))
+        status.append(https_token(url))
+        status.append(request_url(url, soup, hostname))
+        status.append(url_of_anchor(url, soup, hostname))
+        status.append(links_in_tags(url, soup, hostname))
+        status.append(sfh(url, soup, hostname))
+        status.append(submitting_to_email(soup))
+
+        status.append(-1 if dns == -1 else abnormal_url(domain, url))
+
+        # status.append(i_frame(soup))
+        # removing the iFrame feature because our model was not having this feature.
+
+        status.append(-1 if dns == -1 else age_of_domain(domain))
+
+        status.append(dns)
+
+        status.append(web_traffic(soup))
+        status.append(google_index(url))
+        status.append(statistical_report(url, hostname))
+
+        print('\n1. Having IP address\n2. URL Length\n3. URL Shortening service\n4. Having @ symbol\n'
+            '5. Having double slash\n6. Having dash symbol(Prefix Suffix)\n7. Having multiple subdomains\n'
+            '8. SSL Final State\n9. Domain Registration Length\n10. Favicon\n11. HTTP or HTTPS token in domain name\n'
+            '12. Request URL\n13. URL of Anchor\n14. Links in tags\n15. SFH\n16. Submitting to email\n17. Abnormal URL\n'
+            '18. IFrame\n19. Age of Domain\n20. DNS Record\n21. Web Traffic\n22. Google Index\n23. Statistical Reports\n')
+
+        return status
     except:
-        dns = -1
-
-    status.append(-1) ## this feature is expected to be for: SSL_Final_State. It 
-    
-    status.append(-1 if dns == -1 else domain_registration_length(domain))
-
-    status.append(favicon(url, soup, hostname))
-    status.append(https_token(url))
-    status.append(request_url(url, soup, hostname))
-    status.append(url_of_anchor(url, soup, hostname))
-    status.append(links_in_tags(url, soup, hostname))
-    status.append(sfh(url, soup, hostname))
-    status.append(submitting_to_email(soup))
-
-    status.append(-1 if dns == -1 else abnormal_url(domain, url))
-
-    # status.append(i_frame(soup))
-    # removing the iFrame feature because our model was not having this feature.
-
-    status.append(-1 if dns == -1 else age_of_domain(domain))
-
-    status.append(dns)
-
-    status.append(web_traffic(soup))
-    status.append(google_index(url))
-    status.append(statistical_report(url, hostname))
-
-    print('\n1. Having IP address\n2. URL Length\n3. URL Shortening service\n4. Having @ symbol\n'
-          '5. Having double slash\n6. Having dash symbol(Prefix Suffix)\n7. Having multiple subdomains\n'
-          '8. SSL Final State\n9. Domain Registration Length\n10. Favicon\n11. HTTP or HTTPS token in domain name\n'
-          '12. Request URL\n13. URL of Anchor\n14. Links in tags\n15. SFH\n16. Submitting to email\n17. Abnormal URL\n'
-          '18. IFrame\n19. Age of Domain\n20. DNS Record\n21. Web Traffic\n22. Google Index\n23. Statistical Reports\n')
-
-    return status
+        return []
 
 
 # Use the below two lines if features_extraction.py is being run as a standalone file. If you are running this file as

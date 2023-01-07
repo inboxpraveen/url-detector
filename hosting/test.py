@@ -36,28 +36,24 @@ def get_prediction_from_url(test_url):
     """
     
     # we now need a 2D array as a parameter to the predict function.
-    features_test = np.array(features_test).reshape((1, -1))
-    print("Input Features: ",features_test)
-    print("Input Shape: ",features_test.shape)
-    
-    clf = joblib.load('../saved_model/random_forest_model_compressed.pkl')
+    if features_test:
+        # we now need a 2D array as a parameter to the predict function.
+        features_test = np.array(features_test).reshape((1, -1))
+        print("Input Features: ",features_test)
+        print("Input Shape: ",features_test.shape)
+        
+        clf = joblib.load('./random_forest_model_compressed.pkl')
 
-    pred = clf.predict(features_test)
+        pred = clf.predict(features_test)
 
-    return int(pred[0])
+        return int(pred[0])
+    else:
+        return -99
 
 
 def main(url = ""):
     if url:
         return get_prediction_from_url(url)
-        # prediction = get_prediction_from_url(url)
-        # if prediction == 1:
-        #     # print "The website is safe to browse"
-        #     print("SAFE")
-        # elif prediction == -1:
-        #     # print "The website has phishing features. DO NOT VISIT!"
-        #     print("PHISHING")
-        # return prediction
     else:
         return 1
 

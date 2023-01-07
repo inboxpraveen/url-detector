@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from training.Integration.test import main as url_detector
+from test import main as url_detector
 
 app = Flask(__name__)
 

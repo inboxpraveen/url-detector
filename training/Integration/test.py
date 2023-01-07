@@ -7,7 +7,6 @@ import numpy as np
 
 def get_prediction_from_url(test_url):
     features_test = parse_url(test_url)
-
     """
     This is based on the training part ...
 
@@ -34,17 +33,19 @@ def get_prediction_from_url(test_url):
     Index: 20, should be for: Google_Index        
     Index: 21, should be for: Statistical_report  
     """
-    
-    # we now need a 2D array as a parameter to the predict function.
-    features_test = np.array(features_test).reshape((1, -1))
-    print("Input Features: ",features_test)
-    print("Input Shape: ",features_test.shape)
-    
-    clf = joblib.load('../saved_model/random_forest_model_compressed.pkl')
+    if features_test:
+        # we now need a 2D array as a parameter to the predict function.
+        features_test = np.array(features_test).reshape((1, -1))
+        print("Input Features: ",features_test)
+        print("Input Shape: ",features_test.shape)
+        
+        clf = joblib.load('../saved_model/random_forest_model_compressed.pkl')
 
-    pred = clf.predict(features_test)
+        pred = clf.predict(features_test)
 
-    return int(pred[0])
+        return int(pred[0])
+    else:
+        return -99
 
 
 def main(url = ""):
@@ -62,4 +63,4 @@ def main(url = ""):
         return 1
 
 if __name__ == "__main__":
-    pass
+    print(main("https://gubjnwkdkf.wd.edu"))
