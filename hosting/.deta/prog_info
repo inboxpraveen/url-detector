@@ -1,0 +1,1 @@
+{"id":"220d2525-f252-41f9-a021-39310804066b","space":46268,"runtime":"python3.9","name":"urldetector","path":"urldetector","project":"d0r3t3rr","account":"144798365827","region":"ap-south-1","deps":["flask","joblib","pandas","whois"],"envs":null,"public":true,"log_level":"off","cron":""}
