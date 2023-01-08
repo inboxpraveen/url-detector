@@ -78,11 +78,17 @@ body > .container-fluid {
   border-radius: 0;
   transition: background-color 1s ease 0s; }
 
-.navbar-brand {
-  display: none;
-  margin-top: 10px;
-  color: #f0f0e6;
-  font-weight: 400; }
+  .navbar-brand {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .navbar-brand img {
+    max-height: 65px;
+  }
 
 .navbar-default .navbar-nav > li > a {
   color: #f0f0e6;
