@@ -1,38 +1,112 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="lang=">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>URL Detector</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
 </head>
 <body>
-  <div class="bg"></div>
-  <header>
-    <a href="#" class="logo"><img src="{{ url_for('static',filename='logo.png')}}" alt="logo" class="img-fluid"></a>
-    <input type="checkbox" id="menu-btn" class="menu-btn">
-    <label for="menu-btn" class="menu-icon"><span class="menu-icon__line"></span></label>
-    
-    <ul class="nav-links">
-      <li class="nav-link"><a href="https://inboxpraveen.github.io/" target="_blank">More Projects</a></li>
-    </ul>
-  </header>
 
-  
-  <div class="hero">
-    <h2>URL Detector - Legitimate VS Mallicious</h2>
-    <p>Just paste the URL you are concerned with and let AI help you decide should you continue to visit the URL or not.</p>
-    <form action="{{ url_for('detect_url') }}" method='POST'>
-      <input autocomplete='on' type="text" id='url_search' name='url_search' placeholder="Enter a URL to search" required/>
-      <input type="submit" id="submit_button" value="submit" />
-    </form>
-  </div>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="" alt="logo"/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li id="nav-about"><a href="#about">About</a></li>
+            <li id="nav-contact"><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-  <div class="footer-content">
-    <h3>About Me</h3>
-    <p>Hello! I am Praveen, a Artificial Intelligence Engineer at TrellisSoft based on Bangalore, India.</p>
-    <p>Do you like what you see? Help me buy a cup of coffee.<i class="fa fa-coffee"></i></p>
-  </div>
+    <!-- Begin page content -->
+    <div class="container-fluid">
+      
+      <div class="row cover top">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 headline">
+              <h1 class="text-center">URL Detector</h1>
+              <p class="lead text-center">Simple AI tool which reports if a URL is Legitimate (or) Malicious</p>
+              <form class="text-center" action="{{ url_for('detect_url') }}" method="POST">
+                <input class="text-center" type="text" name="url_for" id="url_for" placeholder="Enter a URL to detect" required />
+                <button type="submit" class="btn">Detect</button>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 center-block text-center">
+              <a href="#about"><span id="scrollIcon" class="front-glyph glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="about" class="row cover">
+        <h2 class="text-center">About Me</h2>
+        <div class="row">
+          <div class="col-md-6 text-center about-info">
+            <img class="img-circle text-center profile-img" src="{{ url_for('static',filename='hero.png') }}">
+            <p class="text-center">Hi, I'm Praveen Kumar, a Bachelor of Engineering in Computer Science. I am a Artificial Intelligence Engineer at TrellisSoft and a research enthusiast working into Deep Learning fields of NLP, Speech Recognition, Attention Models, and Question-Answering Systems.</p>
+            <p class="text-center">I love to engage with professionals & discuss ideas, diving into technical research papers, and content creation on social media platforms. I enjoy playing football & experiment life with fun along the journey.</p>
+          </div>
+          <div class="col-md-6 about-tools">
+            <p class="text-center">Here's a few of the tools &amp; technology I frequently work with</p>
+              <div class="col-xs-6">
+                <ul>
+                  <li>Natural Language Processing</li>
+                  <li>Speech Recognition</li>
+                  <li>Python 3.x</li>
+                  <li>Docker Containers</li>
+                </ul>
+              </div>
+              <div class="col-xs-6">
+                <ul>
+                  <li>Git &amp; Github</li>
+                  <li>AWS Instances &amp; Management</li>
+                  <li>Linux Operating System</li>
+                  <li>Kaggle Competitions</li>
+                </ul>
+              </div>
+          </div>
+        </div> 
+      </div><!-- End #About -->
+
+      <div id="contact" class="row cover bottom">
+        <h2 class="text-center contact-header">Contact Me</h2>
+        <p class="text-center contact-email">Get in touch with me &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp;&nbsp; <a href="mailto:inbox.praveen.kumar17@gmail.com">inbox.praveen.kumar17@gmail.com</a></p>
+        <div class="text-center contact-social-icons">
+          <p>Or find me on:</p>
+          <ul class="centered">
+            <a href="https://www.linkedin.com/in/praveen-kumar-inbox"><li><i class="fa fa-linkedin-square"></i> LinkedIn</li></a>
+            <a href="https://github.com/inboxpraveen"><li><i class="fa fa-github"></i> Github</li></a>
+            <a href="https://twitter.com/inboxpraveen"><li><i class="fa fa-twitter"></i> Twitter</li></a>
+          </ul>
+        </p>
+      </div><!-- End #Contact -->
+    </div>
+
+  </body>
+<!-- partial -->
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src='https://cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js'></script>
+<script  src="{{ url_fpr('static',filename='jss/script.js') }}"></script>
 
 </body>
 </html>
