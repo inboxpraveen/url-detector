@@ -4,13 +4,12 @@ from test import main as url_detector
 app = Flask(__name__)
 
 @app.route('/', methods=["GET","POST"])
-def hello_world():
+def detect_url():
     if request.method == "GET":
         return (render_template("index.html"))
     
     if request.method == "POST":
-        # output = -1
-        output = url_detector(request.form["movie_name"])
+        output = url_detector(request.form["url_search"])
         if output == 1:
             return (render_template("safe.html"))
         elif output == -1:
