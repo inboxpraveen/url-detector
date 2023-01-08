@@ -43,8 +43,7 @@ body {
   height: 100%;
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
   background-color: #07374a;
-  /* Margin bottom by footer height */
-  margin-bottom: 60px; }
+  margin: 0 auto;}
 
 h1,
 h2,
@@ -85,6 +84,7 @@ body > .container-fluid {
     line-height: 1;
     font-weight: 600;
     letter-spacing: 1px;
+    overflow-x: hidden;
   }
   .navbar-brand img {
     max-height: 65px;
