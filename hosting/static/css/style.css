@@ -51,17 +51,18 @@ h3,
 h4,
 h5 {
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
-  color: #07374a; }
+  color: #25b79f; }
 
 p {
   font-family: "Quattrocento", sans-serif;
   color: #f0f0e6; }
 
 body > .container-fluid {
-  padding: 60px 15px 0; }
+  padding: 60px 15px 0;
+  overflow-x: hidden;}
 
 .container-fluid .text-muted {
-  margin: 20px 0; }
+  margin: 0; }
 
 .btn:focus, a:focus {
   outline: none !important; }
@@ -84,7 +85,6 @@ body > .container-fluid {
     line-height: 1;
     font-weight: 600;
     letter-spacing: 1px;
-    overflow-x: hidden;
   }
   .navbar-brand img {
     max-height: 65px;
