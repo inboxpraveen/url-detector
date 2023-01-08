@@ -42,7 +42,7 @@ img {
 body {
   height: 100%;
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
-  background-color: #25b79f;
+  background-color: #07374a;
   /* Margin bottom by footer height */
   margin-bottom: 60px; }
 
@@ -104,7 +104,7 @@ body > .container-fluid {
   color: #f0f0e6;
   text-decoration: none; }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  background-color: transparent;
+  background-color: #25b79f;
   color: #f0f0e6; }
 .navbar-default .navbar-toggle {
   border-color: #f0f0e6; }
@@ -135,7 +135,7 @@ body > .container-fluid {
     padding: 15% 0 10% 0;
     height: 100vh;
     display: flex;
-    background-color: #25b79f; }
+    background-color: #07374a; }
   .cover.bottom {
     padding: 10% 0 10% 0; }
 
@@ -203,20 +203,13 @@ body > .container-fluid {
     display: inline-block;
     padding: 2%; }
 
-.footer {
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 30px;
-  background-color: #07374a;
-  color: #f0f0e6; }
 
 #scrollIcon, #scrollTopIcon {
   margin-top: 200px;
   padding: 10px;
   font-size: 1.5em;
-  color: #07374a;
-  border: solid 2px #07374a;
+  color: #61b6d4;
+  border: solid 2px #c4e4f1;
   border-radius: 50%; }
 
 #scrollTopIcon {
