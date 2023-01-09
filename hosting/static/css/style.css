@@ -341,3 +341,82 @@ a:focus {
   border-width: solid 2px;
   background-color: transparent;
 }
+
+
+
+
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+}
+
+.modal[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close {
+  background-color: transparent;
+  background: fixed;
+  border-width: 2px;
+  color: #25b79f;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  justify-items: center;
+  align-items: center;
+  font-size: 3.5rem;
+  border-color: #c4e4f1;
+}
+
+.model-inner {
+  background-color: #07374a;
+  border-radius: 1em;
+  max-width: 600px;
+  padding: 1em;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.model-inner p {
+  padding: auto;
+  margin: 1em;
+}
+
+.modal-header {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #c4e4f1;
+}
+
+#modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: black;
+  opacity: 0.5;  
+}
+
+.modal-open {
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+  justify-self: center;
+  background-color: transparent;
+  border: 2px;
+  color: #25b79f;
+  font-size: 2rem;
+}
