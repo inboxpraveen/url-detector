@@ -23,14 +23,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="{{ url_for('static',filename='logo.png') }}" alt="logo"/></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li id="nav-about"><a href="#about">About</a></li>
             <li id="nav-contact"><a href="#contact">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
 
@@ -42,9 +41,9 @@
             <div class="col-xs-12 headline">
               <h1 class="text-center">URL Detector</h1>
               <p class="lead text-center">Simple AI tool which reports if a URL is Legitimate (or) Malicious</p>
-              <form class="text-center" action="{{ url_for('detect_url') }}" method="POST">
-                <input class="text-center" type="text" name="url_search" id="url_search" placeholder="Enter a URL to detect" required />
-                <button type="submit" class="btn">Detect</button>
+              <form class="my_form text-center" action="{{ url_for('detect_url') }}" method="POST">
+                <input class="form_input_url text-center" type="text" name="url_search" id="url_search" placeholder="Enter a URL to detect" required />
+                <button type="submit" class="form_input_url_btn btn">Detect</button>
               </form>
             </div>
           </div>
