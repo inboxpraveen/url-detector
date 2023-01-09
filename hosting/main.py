@@ -9,7 +9,15 @@ def detect_url():
         return (render_template("index.html"))
     
     if request.method == "POST":
-        output = url_detector(request.form["url_search"])
+        input_url = request.form["url_search"]
+        if not input_url.startswith('www.'):
+            input_url = 'www.' + input_url
+        if not input_url.startswith('https://'):
+            input_url = 'https://' + input_url
+        elif not input_url.startswith('http://'):
+            input_url = 'http://' + input_url
+        
+        output = url_detector(input_url)
         if output == 1:
             return (render_template("safe.html"))
         elif output == -1:
