@@ -284,9 +284,10 @@ a:focus {
 
 #scrollIcon,
 #scrollTopIcon {
-  margin-top: 30vh;
+  margin-top: 25vh;
   padding: 10px;
   font-size: 1.5em;
+  position: absolute;
   color: #61b6d4;
   border: solid 2px #c4e4f1;
   border-radius: 50%;
@@ -419,4 +420,34 @@ a:focus {
   border: 2px;
   color: #25b79f;
   font-size: 2rem;
+}
+
+.safe_message {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #08e664;
+  padding: 1rem;
+  font-size: 2.5rem;
+}
+
+.unsafe_message {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #e60808;
+  padding: 1rem;
+  font-size: 2.5rem;
+}
+
+.invalid_message {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #25b79f;
+  padding: 1rem;
+  font-size: 2.5rem;
 }

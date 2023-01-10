@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/', methods=["GET","POST"])
 def detect_url():
     if request.method == "GET":
-        return (render_template("index.html"))
+        return (render_template("index.html",safe="no",unsafe="no",error="no"))
     
     if request.method == "POST":
         input_url = request.form["url_search"]
@@ -19,11 +19,11 @@ def detect_url():
         
         output = url_detector(input_url)
         if output == 1:
-            return (render_template("safe.html"))
+            return (render_template("index.html",safe="yes",unsafe="no",error="no"))
         elif output == -1:
-            return (render_template("unsafe.html"))
+            return (render_template("index.html",safe="no",unsafe="yes",error="no"))
         else:
-            return ("<h1>something went wrong</h1>")
+            return (render_template("index.html",safe="no",unsafe="no",error="yes"))
 
 if __name__ == "__main__":
     app.run()
