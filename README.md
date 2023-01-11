@@ -4,14 +4,18 @@ This repo contains the model design and definition of a url being Phishing (Mali
 
 ### Notable Links
 
-[1. URL Detector Hosted Demo]()
+[1. URL Detector Hosted Demo](https://urldetector.deta.dev/)
 
 [2. Complete Explanation - Part 1 - Understanding Model]()
 
 [3. Complete Explanation - Part 2 - Understanding Hosting and Demo]()
 
 
-## Project Task: Week 1
+
+
+
+
+<!-- ## Project Task: Week 1
 #### Exploratory Data Analysis:
 
 - Each sample has 32 features ranging from -1,0,1. Explore the data using histogram, heatmaps. 
@@ -83,4 +87,4 @@ So, I am choosing [Deta]() as this provides free lifetime service.
 After this, we need to login to deta using the following command:
     deta login
 
-this will open up a web browser page where you should login and it will redirect you back to your command/terminal saying you have been logged in successfully.
+this will open up a web browser page where you should login and it will redirect you back to your command/terminal saying you have been logged in successfully. -->
