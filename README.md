@@ -11,10 +11,6 @@ This repo contains the model design and definition of a url being Phishing (Mali
 [3. Complete Explanation - Part 2 - Understanding Hosting and Demo]()
 
 
-
-
-
-
 <!-- ## Project Task: Week 1
 #### Exploratory Data Analysis:
 
