@@ -6,10 +6,9 @@ This repo contains the model design and definition of a url being Phishing (Mali
 
 [1. URL Detector Hosted Demo](https://urldetector.deta.dev/)
 
-[2. Complete Explanation - Part 1 - Understanding Model]()
+[2. Complete Explanation - Part 1 - Understanding Model and Training]()
 
 [3. Complete Explanation - Part 2 - Understanding Hosting and Demo]()
-
 
 <!-- ## Project Task: Week 1
 #### Exploratory Data Analysis:
