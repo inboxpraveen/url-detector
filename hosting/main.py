@@ -4,6 +4,7 @@ from test import main as url_detector
 app = Flask(__name__)
 
 @app.route('/', methods=["GET","POST"])
+## need to update the model with url classification
 def detect_url():
     if request.method == "GET":
         return (render_template("index.html",safe="no",unsafe="no",error="no"))
